@@ -7,12 +7,29 @@
     android:layout_marginEnd="10dp"
     android:layout_marginBottom="5dp">
 
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/holder"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#1A237E" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvID"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/id"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#1A237E" />
+
+        <TextView
+            android:id="@+id/tvString"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/holder"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#1A237E" />
+
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

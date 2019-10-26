@@ -28,4 +28,12 @@ public class Word {
     public void setString(@NonNull String string) {
         this.string = string;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }
