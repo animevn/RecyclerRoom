@@ -11,21 +11,21 @@ public class Word {
     @PrimaryKey(autoGenerate = true)
     private int ID;
 
-    @ColumnInfo(name = "word")
+    @ColumnInfo(name = "string")
     @NonNull
-    private String word;
+    private String string;
 
-    public Word(int ID, @NonNull String word) {
+    public Word(int ID, @NonNull String string) {
         this.ID = ID;
-        this.word = word;
+        this.string = string;
     }
 
     @NonNull
-    public String getWord() {
-        return word;
+    public String getString() {
+        return string;
     }
 
-    public void setWord(@NonNull String word) {
-        this.word = word;
+    public void setString(@NonNull String string) {
+        this.string = string;
     }
 }
