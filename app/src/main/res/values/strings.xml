@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RecyclerRoomDemo</string>
+    <string name="holder">Holder</string>
+    <string name="title_activity_new">NewActivity</string>
 </resources>
