@@ -29,7 +29,7 @@ public class Word {
         this.string = string;
     }
 
-    public int getID() {
+    public int getID(){
         return ID;
     }
 

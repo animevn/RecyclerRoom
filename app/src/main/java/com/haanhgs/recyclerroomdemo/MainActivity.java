@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         updateActionBar();
         updateFloatButton();
-
         initViewModel();
         initRecyclerView();
         enableSwipe();
