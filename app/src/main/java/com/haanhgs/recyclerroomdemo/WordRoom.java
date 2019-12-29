@@ -16,7 +16,7 @@ public abstract class WordRoom extends RoomDatabase {
 
     private static class InitDatabaseAsync extends AsyncTask<Void, Void, Void>{
         private final WordDao wordDao;
-        private String[]strings = {"alpha", "beta", "gamma"};
+        private final String[]strings = {"alpha", "beta", "gamma"};
 
         InitDatabaseAsync(WordRoom wordRoom) {
             wordDao = wordRoom.wordDao();
@@ -33,7 +33,7 @@ public abstract class WordRoom extends RoomDatabase {
         }
     }
 
-    private static RoomDatabase.Callback callback = new RoomDatabase.Callback(){
+    private static final RoomDatabase.Callback callback = new RoomDatabase.Callback(){
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {
             super.onOpen(db);

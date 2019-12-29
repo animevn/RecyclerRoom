@@ -10,8 +10,8 @@ import androidx.lifecycle.LiveData;
 
 public class ViewModel extends AndroidViewModel {
 
-    private WordRepo repo;
-    private LiveData<List<Word>> allData;
+    private final WordRepo repo;
+    private final LiveData<List<Word>> allData;
 
     public ViewModel(@NonNull Application application) {
         super(application);
@@ -38,5 +38,7 @@ public class ViewModel extends AndroidViewModel {
     public void insert(String string){
         repo.insert(string);
     }
+
+
 
 }

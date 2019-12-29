@@ -8,8 +8,8 @@ import androidx.lifecycle.LiveData;
 
 public class WordRepo {
 
-    private WordDao dao;
-    private LiveData<List<Word>> allData;
+    private final WordDao dao;
+    private final LiveData<List<Word>> allData;
 
     public WordRepo(Application application){
         WordRoom wordRoom = WordRoom.init(application);
@@ -22,7 +22,7 @@ public class WordRepo {
     }
 
     private static class InsertAsync extends AsyncTask<Word, Void, Void>{
-        private WordDao dao;
+        private final WordDao dao;
 
         public InsertAsync(WordDao dao){
             this.dao = dao;
@@ -44,7 +44,7 @@ public class WordRepo {
     }
 
     private static class DeleteAsync extends AsyncTask<Word, Void, Void>{
-        private WordDao dao;
+        private final WordDao dao;
 
         public DeleteAsync(WordDao dao){
             this.dao = dao;
@@ -62,7 +62,7 @@ public class WordRepo {
     }
 
     private static class DeleteAllAsync extends AsyncTask<Void, Void, Void>{
-        private WordDao dao;
+        private final WordDao dao;
 
         public DeleteAllAsync(WordDao dao){
             this.dao = dao;
