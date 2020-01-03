@@ -1,7 +1,6 @@
 package com.haanhgs.recyclerroomdemo.model;
 
 import android.content.Context;
-import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import androidx.annotation.NonNull;
@@ -17,9 +16,8 @@ public abstract class WordRoom extends RoomDatabase {
     private static WordRoom instance;
     public abstract WordDao getDao();
 
-    @SuppressWarnings("SameReturnValue")
     private static void getDefault(WordRoom wordRoom){
-        Tasks.call(executor, () -> {
+        executor.execute(() -> {
             String[] strings = {"alpha", "beta", "gamma"};
             WordDao listener = wordRoom.getDao();
             if (listener.getAnyWord().length == 0) {
@@ -27,7 +25,6 @@ public abstract class WordRoom extends RoomDatabase {
                     listener.insert(new Word(0, string));
                 }
             }
-            return null;
         });
     }
 
