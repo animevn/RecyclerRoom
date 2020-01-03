@@ -13,10 +13,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 @Database(entities = {Word.class}, version = 1, exportSchema = false)
 public abstract class WordRoom extends RoomDatabase {
 
-    private static Executor executor = Executors.newSingleThreadExecutor();
+    private static final Executor executor = Executors.newSingleThreadExecutor();
     private static WordRoom instance;
     public abstract WordDao getDao();
 
+    @SuppressWarnings("SameReturnValue")
     private static void getDefault(WordRoom wordRoom){
         Tasks.call(executor, () -> {
             String[] strings = {"alpha", "beta", "gamma"};

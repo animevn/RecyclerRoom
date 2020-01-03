@@ -9,7 +9,7 @@ import androidx.lifecycle.LiveData;
 
 public class WordRepo {
 
-    private static Executor executor = Executors.newSingleThreadExecutor();
+    private static final Executor executor = Executors.newSingleThreadExecutor();
     private final WordDao listener;
     private final LiveData<List<Word>> allData;
 
@@ -23,6 +23,7 @@ public class WordRepo {
         return allData;
     }
 
+    @SuppressWarnings("SameReturnValue")
     private static void insertWord(WordDao listener, Word word){
         Tasks.call(executor, () -> {
             listener.insert(word);
@@ -38,6 +39,7 @@ public class WordRepo {
         insert(new Word(0, string));
     }
 
+    @SuppressWarnings("SameReturnValue")
     private static void updateWord(WordDao listener, Word word){
         Tasks.call(executor, () -> {
             listener.update(word);
@@ -49,6 +51,7 @@ public class WordRepo {
         updateWord(listener, word);
     }
 
+    @SuppressWarnings("SameReturnValue")
     private static void deleteWord(WordDao listener, Word word){
         Tasks.call(executor, ()->{
             listener.delete(word);
@@ -60,6 +63,7 @@ public class WordRepo {
         deleteWord(listener, word);
     }
 
+    @SuppressWarnings("SameReturnValue")
     private static void deleteAll(WordDao listener){
         Tasks.call(executor, ()->{
             listener.deleteAll();
