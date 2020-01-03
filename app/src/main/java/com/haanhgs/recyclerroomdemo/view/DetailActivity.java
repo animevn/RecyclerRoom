@@ -1,10 +1,12 @@
-package com.haanhgs.recyclerroomdemo;
+package com.haanhgs.recyclerroomdemo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.haanhgs.recyclerroomdemo.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
         ButterKnife.bind(this);
+        Intent intent = getIntent();
+        if (intent.getStringExtra("edit") != null){
+            etWord.setText(intent.getStringExtra("edit"));
+        }
     }
 
     private void handleButtonSave(){

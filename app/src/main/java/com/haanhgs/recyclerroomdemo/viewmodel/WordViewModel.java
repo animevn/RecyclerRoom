@@ -39,5 +39,9 @@ public class WordViewModel extends AndroidViewModel {
         repo.insert(string);
     }
 
+    public void update(Word word){
+        repo.update(word);
+    }
+
 
 }

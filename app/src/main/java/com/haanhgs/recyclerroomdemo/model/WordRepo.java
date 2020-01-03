@@ -38,6 +38,17 @@ public class WordRepo {
         insert(new Word(0, string));
     }
 
+    private static void updateWord(WordDao listener, Word word){
+        Tasks.call(executor, () -> {
+            listener.update(word);
+            return null;
+        });
+    }
+
+    public void update(Word word){
+        updateWord(listener, word);
+    }
+
     private static void deleteWord(WordDao listener, Word word){
         Tasks.call(executor, ()->{
             listener.delete(word);

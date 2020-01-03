@@ -1,8 +1,10 @@
-package com.haanhgs.recyclerroomdemo;
+package com.haanhgs.recyclerroomdemo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.haanhgs.recyclerroomdemo.R;
+import com.haanhgs.recyclerroomdemo.adapter.Adapter;
 import com.haanhgs.recyclerroomdemo.model.Word;
 import com.haanhgs.recyclerroomdemo.viewmodel.WordViewModel;
 import java.util.List;
@@ -29,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvMain;
 
     private static final int REQUEST = 1979;
+    private static final int REQUEST_EDIT = 2204;
     private WordViewModel viewModel;
     private List<Word> wordList;
     private Adapter adapter;
+    private Word chosenWord;
 
     private void updateActionBar(){
         Toolbar tbrMain = findViewById(R.id.tbrMain);
@@ -86,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(new Intent(this, DetailActivity.class), REQUEST);
     }
 
+    public void editWord(Word word){
+        chosenWord = word;
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("edit", word.getString());
+        startActivityForResult(intent, REQUEST_EDIT);
+    }
+
     @OnClick(R.id.fbnMain)
     public void onViewClicked(){
         createNewWord();
@@ -96,6 +107,12 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST && resultCode == RESULT_OK && data != null){
             viewModel.insert(data.getStringExtra(DetailActivity.REPLY));
+        }else if (requestCode == REQUEST_EDIT && resultCode == RESULT_OK && data != null){
+            String string = data.getStringExtra(DetailActivity.REPLY);
+            if ( string != null){
+                chosenWord.setString(string);
+                viewModel.update(chosenWord);
+            }
         }
     }
 }

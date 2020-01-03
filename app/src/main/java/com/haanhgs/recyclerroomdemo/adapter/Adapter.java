@@ -1,17 +1,23 @@
-package com.haanhgs.recyclerroomdemo;
+package com.haanhgs.recyclerroomdemo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.haanhgs.recyclerroomdemo.R;
 import com.haanhgs.recyclerroomdemo.model.Word;
+import com.haanhgs.recyclerroomdemo.view.DetailActivity;
+import com.haanhgs.recyclerroomdemo.view.MainActivity;
+
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
+    public static final int REQUEST = 2204;
     private List<Word> words;
 
     public void setWords(List<Word> words) {
@@ -29,8 +35,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvID.setText(String.format("%s", words.get(position).getID()));
-        holder.tvString.setText(words.get(position).getString());
+        Word word = words.get(position);
+        holder.tvID.setText(String.format("%s", word.getID()));
+        holder.tvString.setText(word.getString());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = holder.itemView.getContext();
+                ((MainActivity)context).editWord(word);
+            }
+        });
     }
 
     @Override
@@ -47,6 +61,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             super(itemView);
             tvID = itemView.findViewById(R.id.tvID);
             tvString = itemView.findViewById(R.id.tvString);
+
         }
     }
 
