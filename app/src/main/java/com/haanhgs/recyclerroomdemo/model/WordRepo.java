@@ -1,13 +1,10 @@
 package com.haanhgs.recyclerroomdemo.model;
 
 import android.app.Application;
-
 import com.google.android.gms.tasks.Tasks;
-
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
 import androidx.lifecycle.LiveData;
 
 public class WordRepo {
