@@ -33,7 +33,6 @@ dependencies {
 
     //viewmodel
     implementation 'android.arch.lifecycle:extensions:2.0.0'
-    //noinspection LifecycleAnnotationProcessorWithJava8
     annotationProcessor 'android.arch.lifecycle:compiler:2.0.0'
 
     //room database
