@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.haanhgs.recyclerroomdemo.R;
 import com.haanhgs.recyclerroomdemo.model.Word;
+import com.haanhgs.recyclerroomdemo.view.MainActivity;
+
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,8 +19,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private List<Word> getAllWords;
 
-    public Adapter(List<Word> getAllWords) {
+    public void setGetAllWords(List<Word> getAllWords) {
         this.getAllWords = getAllWords;
+    }
+
+    public Word getWordAtPosition(int position){
+        return getAllWords.get(position);
     }
 
     @NonNull
@@ -50,7 +56,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             super(itemView);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(view->{
-
+                Context context = itemView.getContext();
+                ((MainActivity)context).editWord(getAllWords.get(getAdapterPosition()));
             });
         }
 
