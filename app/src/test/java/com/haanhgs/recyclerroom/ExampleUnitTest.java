@@ -1,4 +1,4 @@
-package com.haanhgs.recyclerroomdemo;
+package com.haanhgs.recyclerroom;
 
 import org.junit.Test;
 

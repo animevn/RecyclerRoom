@@ -1,8 +1,8 @@
-package com.haanhgs.recyclerroomdemo.viewmodel;
+package com.haanhgs.recyclerroom.viewmodel;
 
 import android.app.Application;
-import com.haanhgs.recyclerroomdemo.model.Word;
-import com.haanhgs.recyclerroomdemo.model.WordRepo;
+import com.haanhgs.recyclerroom.model.Word;
+import com.haanhgs.recyclerroom.model.WordRepo;
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;

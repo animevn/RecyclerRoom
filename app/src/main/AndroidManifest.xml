@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.haanhgs.recyclerroomdemo">
+    package="com.haanhgs.recyclerroom">
 
     <dist:module dist:instant="true" />
 
@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.haanhgs.recyclerroom.view.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.NewActivity"
+            android:name="com.haanhgs.recyclerroom.view.NewActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".view.MainActivity"
+            android:parentActivityName="com.haanhgs.recyclerroom.view.MainActivity"
             >
         </activity>
     </application>

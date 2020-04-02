@@ -1,4 +1,4 @@
-package com.haanhgs.recyclerroomdemo.model;
+package com.haanhgs.recyclerroom.model;
 
 import java.util.List;
 import androidx.lifecycle.LiveData;

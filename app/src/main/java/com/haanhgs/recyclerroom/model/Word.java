@@ -1,4 +1,4 @@
-package com.haanhgs.recyclerroomdemo.model;
+package com.haanhgs.recyclerroom.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

@@ -1,11 +1,11 @@
-package com.haanhgs.recyclerroomdemo.view;
+package com.haanhgs.recyclerroom.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import com.haanhgs.recyclerroomdemo.R;
+import com.haanhgs.recyclerroom.R;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

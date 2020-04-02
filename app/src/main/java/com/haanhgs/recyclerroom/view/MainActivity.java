@@ -1,12 +1,12 @@
-package com.haanhgs.recyclerroomdemo.view;
+package com.haanhgs.recyclerroom.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.haanhgs.recyclerroomdemo.R;
-import com.haanhgs.recyclerroomdemo.adapter.Adapter;
-import com.haanhgs.recyclerroomdemo.model.Word;
-import com.haanhgs.recyclerroomdemo.viewmodel.WordViewModel;
+import com.haanhgs.recyclerroom.R;
+import com.haanhgs.recyclerroom.adapter.Adapter;
+import com.haanhgs.recyclerroom.model.Word;
+import com.haanhgs.recyclerroom.viewmodel.WordViewModel;
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

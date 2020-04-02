@@ -1,4 +1,4 @@
-package com.haanhgs.recyclerroomdemo.model;
+package com.haanhgs.recyclerroom.model;
 
 import android.content.Context;
 import java.util.concurrent.Executor;

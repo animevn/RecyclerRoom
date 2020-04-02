@@ -1,13 +1,13 @@
-package com.haanhgs.recyclerroomdemo.adapter;
+package com.haanhgs.recyclerroom.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.haanhgs.recyclerroomdemo.R;
-import com.haanhgs.recyclerroomdemo.model.Word;
-import com.haanhgs.recyclerroomdemo.view.MainActivity;
+import com.haanhgs.recyclerroom.R;
+import com.haanhgs.recyclerroom.model.Word;
+import com.haanhgs.recyclerroom.view.MainActivity;
 
 import java.util.List;
 import androidx.annotation.NonNull;
